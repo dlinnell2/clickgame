@@ -1,24 +1,44 @@
 import React, { Component } from 'react';
-import Wrapper from './components/Wrapper';
+import Container from './components/Container';
+import Image from './components/Image';
+import Navbar from './components/Navbar';
+import Jumbo from './components/Jumbo'
 import info from './info.json';
 
 
 class App extends Component {
 
-  state = { info };
+  state = { 
+    info,
+    currentScore: 0,
+    highSchore: 0
+   };
 
   render() {
 
     return (
 
-      <Wrapper>
+      <div>
 
-        {this.state.info.map((character) =>
+        <Navbar current={this.state.currentScore} high={this.state.highSchore} />
 
-          <img src={character.image} />
-        )}
+        <Jumbo />
 
-      </Wrapper>
+        <Container>
+
+          <div className="row">
+
+            {this.state.info.map((character) =>
+
+              <Image image={character.image} key={character.id} />
+
+            )}
+
+          </div>
+
+        </Container>
+
+      </div>
 
     )
   }

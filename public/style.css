@@ -1,0 +1,16 @@
+img {
+    width: 200px;
+    height: 150px;
+}
+
+.clickImage {
+    margin-top: 15px;
+}
+
+.jumbotron {
+    text-align: center
+}
+
+.score {
+    color: white
+}

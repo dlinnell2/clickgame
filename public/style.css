@@ -15,7 +15,16 @@ img {
     color: white
 }
 
-.message {
+.correct {
     color: white;
     font-size: 24px;
+}
+
+.wrong {
+    color: red;
+    font-size: 30px;
+}
+
+.row {
+    margin-bottom: 25px;
 }

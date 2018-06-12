@@ -22,6 +22,7 @@ class App extends Component {
     highScore: 0,
     clicked: [0],
     message: null,
+    messageStyle: null,
   };
 
   clickImage = (id) => {
@@ -35,6 +36,7 @@ class App extends Component {
         currentScore: 0,
         clicked: [0],
         message: "Incorrect!",
+        messageStyle: "wrong",
         info
       })
 
@@ -50,12 +52,14 @@ class App extends Component {
           highScore: this.state.currentScore + 1,
           currentScore: this.state.currentScore + 1,
           message: "Correct!",
+          messageStyle: "correct",
           info
         })
       } else {
         this.setState({
           currentScore: this.state.currentScore + 1,
           message: "Correct!",
+          messageStyle: "correct",
           info
         })
       }
@@ -69,7 +73,10 @@ class App extends Component {
 
       <div>
 
-        <Navbar current={this.state.currentScore} high={this.state.highScore} message={this.state.message}/>
+        <Navbar current={this.state.currentScore}
+        high={this.state.highScore}
+        message={this.state.message}
+        style={this.state.messageStyle}/>
 
         <Jumbo />
 
